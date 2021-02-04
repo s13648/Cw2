@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text.Json;
 using System.Xml.Serialization;
 using Cw2.Data;
 using Cw2.Options;
@@ -22,9 +23,10 @@ namespace Cw2.Utils
             }
         }
 
-        private static string JsonSerialize(University university)
+        private static void JsonSerialize(University university)
         {
-            throw new NotImplementedException();
+            var jsonString = JsonSerializer.Serialize(university);
+            File.WriteAllText("data.json", jsonString);
         }
 
         private static void XmlSerialize(University university)
