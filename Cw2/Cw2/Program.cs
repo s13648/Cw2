@@ -17,7 +17,10 @@ namespace Cw2
             {
                 var options = new OptionsParser(args).Parse();
                 var dataReader = new DataReader(options);
-                var enumerable = dataReader.GetRecords();
+                
+                var students = dataReader.GetRecords();
+                var university = new University(students, "Misha Kurch");
+                Serializer.Serialize(university, options);
             }
             catch (Exception e)
             {
