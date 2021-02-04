@@ -1,5 +1,5 @@
 ﻿using System;
-using System.IO;
+using Cw2.Data;
 using Cw2.Options;
 using Cw2.Utils;
 
@@ -16,6 +16,8 @@ namespace Cw2
             try
             {
                 var options = new OptionsParser(args).Parse();
+                var dataReader = new DataReader(options);
+                var enumerable = dataReader.GetRecords();
             }
             catch (Exception e)
             {

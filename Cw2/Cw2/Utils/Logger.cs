@@ -12,5 +12,11 @@ namespace Cw2.Utils
             File.AppendAllText(LogFilePath,"\n________________\n");
             File.AppendAllText(LogFilePath,exception.Message);
         }
+
+        public static void LogStudent(string[] student)
+        {
+            File.AppendAllText(LogFilePath,"\n________________\n");
+            File.AppendAllText(LogFilePath,string.Join(",",student));
+        }
     }
 }

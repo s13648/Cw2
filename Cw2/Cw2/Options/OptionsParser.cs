@@ -28,6 +28,9 @@ namespace Cw2.Options
 
         private static void ThrowIfPathIsInvalid(string inputFileName)
         {
+            if (string.IsNullOrWhiteSpace(inputFileName))
+                return;
+            
             if (inputFileName.IndexOfAny(Path.GetInvalidPathChars()) != -1)
                 throw new ArgumentException("Plik nazwa nie istnieje");
         }
